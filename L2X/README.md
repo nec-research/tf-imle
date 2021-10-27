@@ -5,7 +5,7 @@
 Uncompress the files at: http://people.csail.mit.edu/taolei/beer/ into the *data* subfolder.
 
 
-In the Jupyter notebook, you can use the code block below to switch between 
+In the [Jupyter notebook](L2X-experiments-neurips.ipynb), the code block listed below can be used to switch between 
 the standard L2X, SoftSub, and I-MLE
 
 ```python
