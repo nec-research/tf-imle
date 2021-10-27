@@ -7,6 +7,7 @@ Tensorflow implementation and Jupyter notebooks for Implicit Maximum Likelihood 
 * numpy==1.18.5
 * matplotlib==3.1.1
 * scikit-learn==0.24.1
+* tensorflow-probability==0.7.0
 
 
 ## Reference
