@@ -1,6 +1,7 @@
 # tf-imle
-Tensorflow implementation and Jupyter notebooks for Implicit Maximum Likelihood Estimation
+Tensorflow 2 implementation and Jupyter notebooks for Implicit Maximum Likelihood Estimation
 
+There is also a PyTorch implmentation available: https://github.com/uclnlp/torch-imle
 
 ## Requirements: 
 * tensorflow==2.3.0 or tensorflow-gpu==2.3.0
