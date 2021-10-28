@@ -24,7 +24,7 @@ The core idea of I-MLE is that it defines an implicit maximum likelihood objecti
 * scikit-learn==0.24.1
 * tensorflow-probability==0.7.0
 
-###PyTorch implementation:
+### PyTorch implementation:
 
 
 ## Example: I-MLE as a Layer 
