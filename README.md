@@ -3,7 +3,7 @@ Tensorflow 2 implementation and Jupyter notebooks for Implicit Maximum Likelihoo
 
 There is also a PyTorch implementation available: https://github.com/uclnlp/torch-imle
 
-# Introduction
+## Introduction
 
 Implicit MLE (I-MLE) makes it possible to integrete discrete combinatorial optimization algorithms, such as Dijkstra's algorithm or integer linear program (ILP) solvers, into standard deep learning architectures. The core idea of I-MLE is that it defines an implicit maximum likelihood objective whose gradients are used to update upstream parameters of the model. Every instance of I-MLE requires two ingredients:
 
