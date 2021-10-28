@@ -25,7 +25,7 @@ The core idea of I-MLE is that it defines an implicit maximum likelihood objecti
 
 ## Example: I-MLE as a Layer 
 
-The following is an instance of I-MLE implemented as a layer. This is a class where the optimization problem is computing the k-subset configuration, the target distribution is based on perturbation-based implicit differentiation, and the perturb-and-MAP noise perturbation based on the sum-of-gamme distribution.
+The following is an instance of I-MLE implemented as a layer. This is a class where the optimization problem is computing the k-subset configuration, the target distribution is based on perturbation-based implicit differentiation, and the perturb-and-MAP noise perturbation based on the sum-of-gamma distribution.
 
 ```python
 class IMLESubsetkLayer(tf.keras.layers.Layer):
