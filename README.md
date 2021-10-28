@@ -23,6 +23,77 @@ The core idea of I-MLE is that it defines an implicit maximum likelihood objecti
 * tensorflow-probability==0.7.0
 
 
+## Example: I-MLE as a Layer 
+
+The following is an instance of I-MLE implemented as a layer. This is the class computing the discrete k-subset configuration and uses perturbation-based implicit differentiation to construct a target distribution.
+
+```python
+class IMLESubsetkLayer(tf.keras.layers.Layer):
+    
+    def __init__(self, k, _tau=10.0, _lambda=10.0):
+        super(IMLESubsetkLayer, self).__init__()
+        # average number of 1s in a solution to the optimization problem
+        self.k = k
+        # the temperature at which we want to sample
+        self._tau = _tau
+        # the perturbation strength (here we use a target distribution based on perturbation-based implicit differentiation
+        self._lambda = _lambda  
+        # the number of samples we want to take
+        self.samples = None 
+        
+    @tf.function
+    def sample_sum_of_gamma(self, shape):
+        
+        s = tf.map_fn(fn=lambda t: tf.random.gamma(shape, 1.0/self.k, self.k/t), 
+                  elems=tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0]))   
+        # now add the samples
+        s = tf.reduce_sum(s, 0)
+        # the log(m) term
+        s = s - tf.math.log(10.0)
+        # divide by k --> each s[c] has k samples whose sum is distributed as Gumbel(0, 1)
+        s = self._tau * (s / self.k)
+
+        return s
+    
+    @tf.function
+    def sample_discrete_forward(self, logits): 
+        self.samples = self.sample_sum_of_gamma(tf.shape(logits))
+        gamma_softmax_sample = logits + self.samples
+        threshold = tf.expand_dims(tf.nn.top_k(gamma_softmax_sample, self.k, sorted=True)[0][:,-1], -1)
+        y = tf.cast(tf.greater_equal(gamma_softmax_sample, threshold), tf.float32)
+        return y
+    
+    @tf.function
+    def sample_discrete_backward(self, logits):     
+        gamma_softmax_sample = logits + self.samples
+        threshold = tf.expand_dims(tf.nn.top_k(gamma_softmax_sample, self.k, sorted=True)[0][:,-1], -1)
+        y = tf.cast(tf.greater_equal(gamma_softmax_sample, threshold), tf.float32)
+        return y
+    
+    @tf.custom_gradient
+    def gumbel_topk(self, logits, k):
+
+        # sample discretely with perturb and map
+        z_train = self.sample_discrete_forward(logits)
+        # compute the top-k discrete values
+        threshold = tf.expand_dims(tf.nn.top_k(logits, self.k, sorted=True)[0][:,-1], -1)
+        z_test = tf.cast(tf.greater_equal(logits, threshold), tf.float32)
+        # at training time we sample, at test time we take the argmax
+        z_output = K.in_train_phase(z_train, z_test)
+        
+        def custom_grad(dy):
+
+            # we perturb (implicit diff) and then resuse sample for perturb and MAP
+            map_dy = self.sample_discrete_backward(logits - (self._lambda*dy))
+            # we now compute the gradients as the difference (I-MLE gradients)
+            grad = tf.math.subtract(z_train, map_dy)
+            # return the gradient            
+            return grad, k
+
+        return z_output, custom_grad
+  ```
+
+
 ## Reference
 
 ```bibtex
