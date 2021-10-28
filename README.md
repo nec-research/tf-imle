@@ -16,11 +16,15 @@ The core idea of I-MLE is that it defines an implicit maximum likelihood objecti
 
 
 ## Requirements: 
+
+### Trnsorflow 2 implementation:
 * tensorflow==2.3.0 or tensorflow-gpu==2.3.0
 * numpy==1.18.5
 * matplotlib==3.1.1
 * scikit-learn==0.24.1
 * tensorflow-probability==0.7.0
+
+###PyTorch implementation:
 
 
 ## Example: I-MLE as a Layer 
