@@ -71,7 +71,7 @@ class IMLESubsetkLayer(tf.keras.layers.Layer):
         return y
     
     @tf.custom_gradient
-    def gumbel_topk(self, logits, k):
+    def subset_k(self, logits, k):
 
         # sample discretely with perturb and map
         z_train = self.sample_discrete_forward(logits)
