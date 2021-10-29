@@ -1,0 +1,178 @@
+2021-01-15 00:24:25,420	WARNING import_thread.py:132 -- The remote function 'maprop.blackbox.dijkstra.solver' has been exported 100 times. It's possible that this warning is accidental, but this may indicate that the same remote function is being defined repeatedly from within many tasks and exported to all of the workers. This can be a performance issue and can be resolved by defining the remote function on the driver instead. See https://github.com/ray-project/ray/issues/6240 for more discussion.
+No existing entry for trainer_params.mode.type
+{}[type] = <class 'int'>(1)
+No existing entry for trainer_params.mode.objective_type
+{'type': 1}[objective_type] = <class 'str'>(cost2)
+No existing entry for trainer_params.mode.use_marginal
+{'type': 1, 'objective_type': 'cost2'}[use_marginal] = <class 'bool'>(True)
+No existing entry for trainer_params.mode.nb_samples
+{'type': 1, 'objective_type': 'cost2', 'use_marginal': True}[nb_samples] = <class 'int'>(1)
+No existing entry for trainer_params.mode.temperature
+{'type': 1, 'objective_type': 'cost2', 'use_marginal': True, 'nb_samples': 1}[temperature] = <class 'float'>(10.0)
+No existing entry for trainer_params.mode.scale_temperature_by_path_length
+{'type': 1, 'objective_type': 'cost2', 'use_marginal': True, 'nb_samples': 1, 'temperature': 10.0}[scale_temperature_by_path_length] = <class 'bool'>(True)
+No existing entry for trainer_params.mode.use_gamma
+{'type': 1, 'objective_type': 'cost2', 'use_marginal': True, 'nb_samples': 1, 'temperature': 10.0, 'scale_temperature_by_path_length': True}[use_gamma] = <class 'bool'>(True)
+No existing entry for trainer_params.mode.loss_type
+{'type': 1, 'objective_type': 'cost2', 'use_marginal': True, 'nb_samples': 1, 'temperature': 10.0, 'scale_temperature_by_path_length': True, 'use_gamma': True}[loss_type] = <class 'str'>(normal)
+No existing entry for trainer_params.mode.perturb_w
+{'type': 1, 'objective_type': 'cost2', 'use_marginal': True, 'nb_samples': 1, 'temperature': 10.0, 'scale_temperature_by_path_length': True, 'use_gamma': True, 'loss_type': 'normal'}[perturb_w] = <class 'bool'>(True)
+No existing entry for trainer_params.mode.perturb_w_prime
+{'type': 1, 'objective_type': 'cost2', 'use_marginal': True, 'nb_samples': 1, 'temperature': 10.0, 'scale_temperature_by_path_length': True, 'use_gamma': True, 'loss_type': 'normal', 'perturb_w': True}[perturb_w_prime] = <class 'bool'>(True)
+No existing entry for trainer_params.mode.type
+{}[type] = <class 'int'>(1)
+No existing entry for trainer_params.mode.objective_type
+{'type': 1}[objective_type] = <class 'str'>(cost2)
+No existing entry for trainer_params.mode.use_marginal
+{'type': 1, 'objective_type': 'cost2'}[use_marginal] = <class 'bool'>(True)
+No existing entry for trainer_params.mode.nb_samples
+{'type': 1, 'objective_type': 'cost2', 'use_marginal': True}[nb_samples] = <class 'int'>(1)
+No existing entry for trainer_params.mode.temperature
+{'type': 1, 'objective_type': 'cost2', 'use_marginal': True, 'nb_samples': 1}[temperature] = <class 'float'>(10.0)
+No existing entry for trainer_params.mode.scale_temperature_by_path_length
+{'type': 1, 'objective_type': 'cost2', 'use_marginal': True, 'nb_samples': 1, 'temperature': 10.0}[scale_temperature_by_path_length] = <class 'bool'>(True)
+No existing entry for trainer_params.mode.use_gamma
+{'type': 1, 'objective_type': 'cost2', 'use_marginal': True, 'nb_samples': 1, 'temperature': 10.0, 'scale_temperature_by_path_length': True}[use_gamma] = <class 'bool'>(True)
+No existing entry for trainer_params.mode.loss_type
+{'type': 1, 'objective_type': 'cost2', 'use_marginal': True, 'nb_samples': 1, 'temperature': 10.0, 'scale_temperature_by_path_length': True, 'use_gamma': True}[loss_type] = <class 'str'>(normal)
+No existing entry for trainer_params.mode.perturb_w
+{'type': 1, 'objective_type': 'cost2', 'use_marginal': True, 'nb_samples': 1, 'temperature': 10.0, 'scale_temperature_by_path_length': True, 'use_gamma': True, 'loss_type': 'normal'}[perturb_w] = <class 'bool'>(True)
+No existing entry for trainer_params.mode.perturb_w_prime
+{'type': 1, 'objective_type': 'cost2', 'use_marginal': True, 'nb_samples': 1, 'temperature': 10.0, 'scale_temperature_by_path_length': True, 'use_gamma': True, 'loss_type': 'normal', 'perturb_w': True}[perturb_w_prime] = <class 'bool'>(True)
+{
+    "evaluate_every": 5,
+    "loader_params": {
+        "data_dir": "data/warcraft_shortest_path/12x12",
+        "evaluate_with_extra": false,
+        "normalize": true,
+        "use_local_path": false,
+        "use_test_set": true
+    },
+    "model_dir": "results/warcraft_shortest_path_combresnet",
+    "num_cpus": 40,
+    "num_epochs": 50,
+    "problem_type": "warcraft_shortest_path",
+    "ray_params": {},
+    "save_visualizations": false,
+    "seed": 1,
+    "trainer_name": "DijkstraMAP",
+    "trainer_params": {
+        "batch_size": 70,
+        "l1_regconst": 0.0,
+        "lambda_val": 20.0,
+        "lr_milestone_1": 30,
+        "lr_milestone_2": 40,
+        "mode": {
+            "loss_type": "normal",
+            "nb_samples": 1,
+            "objective_type": "cost2",
+            "perturb_w": true,
+            "perturb_w_prime": true,
+            "scale_temperature_by_path_length": true,
+            "temperature": 10.0,
+            "type": 1,
+            "use_gamma": true,
+            "use_marginal": true
+        },
+        "model_params": {
+            "arch_params": {},
+            "model_name": "CombResnet18"
+        },
+        "neighbourhood_fn": "8-grid",
+        "optimizer_name": "Adam",
+        "optimizer_params": {
+            "lr": 0.0005
+        },
+        "preload_batch": true,
+        "use_cuda": true,
+        "use_lr_scheduling": true
+    },
+    "use_ray": true
+}
+MAP-BACKPROP MODE: {
+    "loss_type": "normal",
+    "nb_samples": 1,
+    "objective_type": "cost2",
+    "perturb_w": true,
+    "perturb_w_prime": true,
+    "scale_temperature_by_path_length": true,
+    "temperature": 10.0,
+    "type": 1,
+    "use_gamma": true,
+    "use_marginal": true
+}
+True
+OBJECTIVE TYPE: cost2
+META: {'input_image_size': 96, 'output_features': 144, 'num_channels': 3, 'denormalize': <maprop.decorators.input_to_numpy object at 0x2acba2fd2630>}
+EVALUATING
+{'loss': -777.9154669189453, 'accuracy': 0.8786736279726028, 'perfect_match_accuracy': 0.032, 'cost_ratio_suggested_true': 2.4898578476905824, 'below_10.0_percent_acc': 0.128, 'below_1.0_percent_acc': 0.055, 'below_0.1_percent_acc': 0.053, 'below_0.01_percent_acc': 0.053, 'below_0.001_percent_acc': 0.038, 'below_0.0001_percent_acc': 0.038, 'valid_acc': 1.0}
+Epoch: 1	Batch time (1.903486)	Data time (0.007863)	Cuda time (0.000002)	Loss (-4188.644680)	Accuracy (0.874587)
+Epoch: 2	Batch time (1.892642)	Data time (0.007564)	Cuda time (0.000003)	Loss (-6479.536670)	Accuracy (0.870276)
+Epoch: 3	Batch time (1.883341)	Data time (0.007893)	Cuda time (0.000002)	Loss (-7397.378917)	Accuracy (0.869330)
+Epoch: 4	Batch time (1.896422)	Data time (0.008366)	Cuda time (0.000002)	Loss (-8221.035322)	Accuracy (0.868650)
+Epoch: 5	Batch time (1.842119)	Data time (0.008757)	Cuda time (0.000002)	Loss (-8987.495780)	Accuracy (0.868288)
+EVALUATING
+{'loss': -9256.03154296875, 'accuracy': 0.8710902887582779, 'perfect_match_accuracy': 0.019, 'cost_ratio_suggested_true': 2.275799732208252, 'below_10.0_percent_acc': 0.16, 'below_1.0_percent_acc': 0.048, 'below_0.1_percent_acc': 0.043, 'below_0.01_percent_acc': 0.043, 'below_0.001_percent_acc': 0.035, 'below_0.0001_percent_acc': 0.035, 'valid_acc': 1.0}
+Epoch: 6	Batch time (1.813311)	Data time (0.007103)	Cuda time (0.000002)	Loss (-9733.863831)	Accuracy (0.867854)
+Epoch: 7	Batch time (1.802774)	Data time (0.006939)	Cuda time (0.000002)	Loss (-10461.666679)	Accuracy (0.866979)
+Epoch: 8	Batch time (1.805514)	Data time (0.007021)	Cuda time (0.000002)	Loss (-11161.614584)	Accuracy (0.867173)
+Epoch: 9	Batch time (1.810884)	Data time (0.007061)	Cuda time (0.000002)	Loss (-11865.458418)	Accuracy (0.867169)
+Epoch: 10	Batch time (1.795589)	Data time (0.007156)	Cuda time (0.000002)	Loss (-12556.905099)	Accuracy (0.867378)
+EVALUATING
+{'loss': -12463.89806640625, 'accuracy': 0.8667083436250687, 'perfect_match_accuracy': 0.011, 'cost_ratio_suggested_true': 2.2749357128143313, 'below_10.0_percent_acc': 0.13, 'below_1.0_percent_acc': 0.032, 'below_0.1_percent_acc': 0.028, 'below_0.01_percent_acc': 0.028, 'below_0.001_percent_acc': 0.026, 'below_0.0001_percent_acc': 0.026, 'valid_acc': 1.0}
+Epoch: 11	Batch time (1.803162)	Data time (0.007020)	Cuda time (0.000002)	Loss (-13247.818798)	Accuracy (0.866530)
+Epoch: 12	Batch time (1.803458)	Data time (0.007180)	Cuda time (0.000002)	Loss (-13943.734408)	Accuracy (0.866921)
+Epoch: 13	Batch time (1.797917)	Data time (0.007097)	Cuda time (0.000002)	Loss (-14640.240909)	Accuracy (0.866833)
+Epoch: 14	Batch time (1.799220)	Data time (0.007119)	Cuda time (0.000002)	Loss (-15328.158651)	Accuracy (0.866808)
+Epoch: 15	Batch time (1.797212)	Data time (0.007213)	Cuda time (0.000002)	Loss (-16012.868752)	Accuracy (0.866424)
+EVALUATING
+{'loss': -15844.837158203125, 'accuracy': 0.86329167842865, 'perfect_match_accuracy': 0.012, 'cost_ratio_suggested_true': 2.292112650871277, 'below_10.0_percent_acc': 0.135, 'below_1.0_percent_acc': 0.039, 'below_0.1_percent_acc': 0.033, 'below_0.01_percent_acc': 0.033, 'below_0.001_percent_acc': 0.03, 'below_0.0001_percent_acc': 0.03, 'valid_acc': 1.0}
+Epoch: 16	Batch time (1.791903)	Data time (0.007110)	Cuda time (0.000002)	Loss (-16692.418405)	Accuracy (0.866552)
+Epoch: 17	Batch time (1.807430)	Data time (0.007188)	Cuda time (0.000002)	Loss (-17367.788465)	Accuracy (0.866894)
+Epoch: 18	Batch time (1.809735)	Data time (0.007072)	Cuda time (0.000002)	Loss (-18041.233431)	Accuracy (0.866808)
+Epoch: 19	Batch time (1.808583)	Data time (0.006986)	Cuda time (0.000002)	Loss (-18716.548743)	Accuracy (0.866790)
+Epoch: 20	Batch time (1.814582)	Data time (0.007129)	Cuda time (0.000002)	Loss (-19390.448665)	Accuracy (0.866814)
+EVALUATING
+{'loss': -18802.85423828125, 'accuracy': 0.8648611319065094, 'perfect_match_accuracy': 0.009, 'cost_ratio_suggested_true': 2.330957922935486, 'below_10.0_percent_acc': 0.118, 'below_1.0_percent_acc': 0.03, 'below_0.1_percent_acc': 0.025, 'below_0.01_percent_acc': 0.025, 'below_0.001_percent_acc': 0.023, 'below_0.0001_percent_acc': 0.023, 'valid_acc': 1.0}
+Epoch: 21	Batch time (1.804086)	Data time (0.007053)	Cuda time (0.000002)	Loss (-20059.146549)	Accuracy (0.866825)
+Epoch: 22	Batch time (1.811886)	Data time (0.007138)	Cuda time (0.000002)	Loss (-20713.086572)	Accuracy (0.866663)
+Epoch: 23	Batch time (1.803805)	Data time (0.007027)	Cuda time (0.000002)	Loss (-21378.680545)	Accuracy (0.866403)
+Epoch: 24	Batch time (1.788560)	Data time (0.006964)	Cuda time (0.000002)	Loss (-22043.256953)	Accuracy (0.867326)
+Epoch: 25	Batch time (1.781209)	Data time (0.007135)	Cuda time (0.000002)	Loss (-22704.566504)	Accuracy (0.866865)
+EVALUATING
+{'loss': -23091.15244140625, 'accuracy': 0.8665833485126495, 'perfect_match_accuracy': 0.011, 'cost_ratio_suggested_true': 2.3498722767829894, 'below_10.0_percent_acc': 0.119, 'below_1.0_percent_acc': 0.033, 'below_0.1_percent_acc': 0.029, 'below_0.01_percent_acc': 0.029, 'below_0.001_percent_acc': 0.024, 'below_0.0001_percent_acc': 0.024, 'valid_acc': 1.0}
+Epoch: 26	Batch time (1.791187)	Data time (0.007126)	Cuda time (0.000002)	Loss (-23370.985211)	Accuracy (0.867060)
+Epoch: 27	Batch time (1.807979)	Data time (0.007171)	Cuda time (0.000002)	Loss (-24023.213568)	Accuracy (0.867337)
+Epoch: 28	Batch time (1.801920)	Data time (0.007203)	Cuda time (0.000002)	Loss (-24684.432283)	Accuracy (0.867042)
+Epoch: 29	Batch time (1.804837)	Data time (0.007122)	Cuda time (0.000002)	Loss (-25338.164885)	Accuracy (0.867310)
+Epoch: 30	Batch time (1.801523)	Data time (0.006974)	Cuda time (0.000002)	Loss (-25991.543707)	Accuracy (0.867058)
+EVALUATING
+{'loss': -24983.589375, 'accuracy': 0.8676111316680908, 'perfect_match_accuracy': 0.015, 'cost_ratio_suggested_true': 2.402239351272583, 'below_10.0_percent_acc': 0.115, 'below_1.0_percent_acc': 0.039, 'below_0.1_percent_acc': 0.033, 'below_0.01_percent_acc': 0.033, 'below_0.001_percent_acc': 0.027, 'below_0.0001_percent_acc': 0.027, 'valid_acc': 1.0}
+Epoch: 31	Batch time (1.799700)	Data time (0.007052)	Cuda time (0.000002)	Loss (-26441.559867)	Accuracy (0.868053)
+Epoch: 32	Batch time (1.789838)	Data time (0.007192)	Cuda time (0.000002)	Loss (-26522.675387)	Accuracy (0.867696)
+Epoch: 33	Batch time (1.789655)	Data time (0.007234)	Cuda time (0.000002)	Loss (-26588.625498)	Accuracy (0.867891)
+Epoch: 34	Batch time (1.784151)	Data time (0.007150)	Cuda time (0.000002)	Loss (-26660.752918)	Accuracy (0.867346)
+Epoch: 35	Batch time (1.799069)	Data time (0.007212)	Cuda time (0.000002)	Loss (-26727.499062)	Accuracy (0.867663)
+EVALUATING
+{'loss': -26975.21595703125, 'accuracy': 0.8653333526849747, 'perfect_match_accuracy': 0.01, 'cost_ratio_suggested_true': 2.3388749313354493, 'below_10.0_percent_acc': 0.121, 'below_1.0_percent_acc': 0.033, 'below_0.1_percent_acc': 0.028, 'below_0.01_percent_acc': 0.028, 'below_0.001_percent_acc': 0.023, 'below_0.0001_percent_acc': 0.023, 'valid_acc': 1.0}
+Epoch: 36	Batch time (1.792494)	Data time (0.007128)	Cuda time (0.000002)	Loss (-26797.716223)	Accuracy (0.867765)
+Epoch: 37	Batch time (1.797533)	Data time (0.007009)	Cuda time (0.000002)	Loss (-26860.962070)	Accuracy (0.867655)
+Epoch: 38	Batch time (1.798408)	Data time (0.007060)	Cuda time (0.000002)	Loss (-26928.889998)	Accuracy (0.867494)
+Epoch: 39	Batch time (1.801889)	Data time (0.007140)	Cuda time (0.000002)	Loss (-26997.786141)	Accuracy (0.867578)
+Epoch: 40	Batch time (1.797522)	Data time (0.006920)	Cuda time (0.000002)	Loss (-27055.853510)	Accuracy (0.867472)
+EVALUATING
+{'loss': -27303.00900390625, 'accuracy': 0.8648958426713943, 'perfect_match_accuracy': 0.012, 'cost_ratio_suggested_true': 2.3343316078186036, 'below_10.0_percent_acc': 0.135, 'below_1.0_percent_acc': 0.034, 'below_0.1_percent_acc': 0.029, 'below_0.01_percent_acc': 0.029, 'below_0.001_percent_acc': 0.025, 'below_0.0001_percent_acc': 0.025, 'valid_acc': 1.0}
+Epoch: 41	Batch time (1.800487)	Data time (0.007132)	Cuda time (0.000002)	Loss (-27111.145396)	Accuracy (0.867672)
+Epoch: 42	Batch time (1.795837)	Data time (0.006998)	Cuda time (0.000002)	Loss (-27115.013244)	Accuracy (0.867487)
+Epoch: 43	Batch time (1.787924)	Data time (0.007092)	Cuda time (0.000002)	Loss (-27120.528146)	Accuracy (0.867485)
+Epoch: 44	Batch time (1.786992)	Data time (0.006964)	Cuda time (0.000002)	Loss (-27130.348063)	Accuracy (0.867490)
+Epoch: 45	Batch time (1.790345)	Data time (0.006970)	Cuda time (0.000002)	Loss (-27135.850709)	Accuracy (0.867615)
+EVALUATING
+{'loss': -26647.9026953125, 'accuracy': 0.8651180684566497, 'perfect_match_accuracy': 0.011, 'cost_ratio_suggested_true': 2.330761811733246, 'below_10.0_percent_acc': 0.128, 'below_1.0_percent_acc': 0.033, 'below_0.1_percent_acc': 0.028, 'below_0.01_percent_acc': 0.028, 'below_0.001_percent_acc': 0.025, 'below_0.0001_percent_acc': 0.025, 'valid_acc': 1.0}
+Epoch: 46	Batch time (1.791595)	Data time (0.007203)	Cuda time (0.000002)	Loss (-27143.253857)	Accuracy (0.867536)
+Epoch: 47	Batch time (1.779603)	Data time (0.007036)	Cuda time (0.000002)	Loss (-27155.358799)	Accuracy (0.867655)
+Epoch: 48	Batch time (1.786391)	Data time (0.006928)	Cuda time (0.000002)	Loss (-27160.462568)	Accuracy (0.867478)
+Epoch: 49	Batch time (1.794131)	Data time (0.007025)	Cuda time (0.000002)	Loss (-27160.316523)	Accuracy (0.867553)
+Epoch: 50	Batch time (1.794072)	Data time (0.006966)	Cuda time (0.000002)	Loss (-27173.823295)	Accuracy (0.867594)
+EVALUATING
+{'loss': -26605.28169921875, 'accuracy': 0.8650902926921844, 'perfect_match_accuracy': 0.011, 'cost_ratio_suggested_true': 2.331741633415222, 'below_10.0_percent_acc': 0.127, 'below_1.0_percent_acc': 0.033, 'below_0.1_percent_acc': 0.028, 'below_0.01_percent_acc': 0.028, 'below_0.001_percent_acc': 0.025, 'below_0.0001_percent_acc': 0.025, 'valid_acc': 1.0}
