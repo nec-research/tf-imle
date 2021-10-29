@@ -62,16 +62,21 @@ class IMLESubsetkLayer(tf.keras.layers.Layer):
     @tf.function
     def sample_discrete_forward(self, logits): 
         self.samples = self.sample_sum_of_gamma(tf.shape(logits))
-        gamma_softmax_sample = logits + self.samples
-        threshold = tf.expand_dims(tf.nn.top_k(gamma_softmax_sample, self.k, sorted=True)[0][:,-1], -1)
-        y = tf.cast(tf.greater_equal(gamma_softmax_sample, threshold), tf.float32)
+        gamma_perturbed_logits = logits + self.samples
+        # gamma_perturbed_logits is the input to the combinatorial opt algorithm
+        # the next two lines can be replaced by a custom black-box algorithm call
+        threshold = tf.expand_dims(tf.nn.top_k(gamma_perturbed_logits, self.k, sorted=True)[0][:,-1], -1)
+        y = tf.cast(tf.greater_equal(gamma_perturbed_logits, threshold), tf.float32)
+        
         return y
     
     @tf.function
     def sample_discrete_backward(self, logits):     
-        gamma_softmax_sample = logits + self.samples
-        threshold = tf.expand_dims(tf.nn.top_k(gamma_softmax_sample, self.k, sorted=True)[0][:,-1], -1)
-        y = tf.cast(tf.greater_equal(gamma_softmax_sample, threshold), tf.float32)
+        gamma_perturbed_logits = logits + self.samples
+        # gamma_perturbed_logits is the input to the combinatorial opt algorithm
+        # the next two lines can be replaced by a custom black-box algorithm call
+        threshold = tf.expand_dims(tf.nn.top_k(gamma_perturbed_logits, self.k, sorted=True)[0][:,-1], -1)
+        y = tf.cast(tf.greater_equal(gamma_perturbed_logits, threshold), tf.float32)
         return y
     
     @tf.custom_gradient
