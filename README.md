@@ -1,8 +1,7 @@
 # tf-imle
 Tensorflow 2 and PyTorch implementation and Jupyter notebooks for Implicit Maximum Likelihood Estimation (I-MLE) proposed in the NeurIPS 2021 paper [Implicit MLE: Backpropagating Through Discrete Exponential Family Distributions.](https://arxiv.org/abs/2106.01798)
 
-
-There is also an alternative PyTorch implementation available: https://github.com/uclnlp/torch-imle
+I-MLE is also available as a PyTorch library: https://github.com/uclnlp/torch-imle
 
 ## Introduction
 
