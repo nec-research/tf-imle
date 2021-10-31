@@ -41,7 +41,7 @@ class IMLESubsetkLayer(tf.keras.layers.Layer):
         self._tau = _tau
         # the perturbation strength (here we use a target distribution based on perturbation-based implicit differentiation
         self._lambda = _lambda  
-        # the number of samples we want to take
+        # the samples we store for the backward pass
         self.samples = None 
         
     @tf.function
