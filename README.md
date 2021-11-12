@@ -16,7 +16,7 @@ The core idea of I-MLE is that it defines an implicit maximum likelihood objecti
 
 Here is a short video presentation about I-MLE:
 
-[![Video presentation of I-MLE](https://img.youtube.com/vi/qjWFAfBTkRw/0.jpg)](https://www.youtube.com/watch?v=qjWFAfBTkRw)
+[![Video presentation of I-MLE](https://img.youtube.com/vi/hb2b0K2PTxI/0.jpg)](https://www.youtube.com/watch?v=hb2b0K2PTxI)
 
 ## Requirements: 
 
