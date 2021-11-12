@@ -14,6 +14,10 @@ The core idea of I-MLE is that it defines an implicit maximum likelihood objecti
 2. A method to compute a surrogate empirical distribution: Vanilla MLE reduces the KL divergence between the current distribution and the empirical distribution. Since in our setting, we do not have access to such an empirical distribution, we have to design surrogate empirical distributions which we term *target distributions*. Here we propose two families of target distributions which are widely applicable and work well in practice.
 
 
+Here is a short video presentation about I-MLE:
+
+[![Video presentation of I-MLE](https://img.youtube.com/vi/qjWFAfBTkRw/0.jpg)](https://www.youtube.com/watch?v=qjWFAfBTkRw)
+
 ## Requirements: 
 
 ### TensorFlow 2 implementation:
