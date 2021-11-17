@@ -18,6 +18,8 @@ Here is a short video presentation about I-MLE:
 
 [![Video presentation of I-MLE](https://img.youtube.com/vi/hb2b0K2PTxI/0.jpg)](https://www.youtube.com/watch?v=hb2b0K2PTxI)
 
+[Slides](https://github.com/nec-research/tf-imle/blob/main/talk_slides_neurips.pdf) of the presentation.
+
 ## Requirements: 
 
 ### TensorFlow 2 implementation:
@@ -27,7 +29,6 @@ Here is a short video presentation about I-MLE:
 * scikit-learn==0.24.1
 * tensorflow-probability==0.7.0
 
-### PyTorch implementation:
 
 
 ## Example: I-MLE as a Layer 
