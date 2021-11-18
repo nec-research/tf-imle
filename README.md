@@ -33,7 +33,7 @@ Here is a short video presentation about I-MLE:
 
 ## Example: I-MLE as a Layer 
 
-The following is an instance of I-MLE implemented as a layer. This is a class where the optimization problem is computing the k-subset configuration, the target distribution is based on perturbation-based implicit differentiation, and the perturb-and-MAP noise perturbations are drawn from the sum-of-gamma distribution.
+The following is an instance of I-MLE implemented as a layer. This is a class where the optimization problem is computing the k-subset (top-k) configuration, the target distribution is based on perturbation-based implicit differentiation, and the perturb-and-MAP noise perturbations are drawn from the sum-of-gamma distribution.
 
 ```python
 class IMLESubsetkLayer(tf.keras.layers.Layer):
