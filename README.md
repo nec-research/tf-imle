@@ -84,7 +84,7 @@ class IMLESubsetkLayer(tf.keras.layers.Layer):
         return y
     
     @tf.custom_gradient
-    def subset_k(self, logits, k):
+    def subset_k(self, logits):
 
         # sample discretely with perturb and map
         z_train = self.sample_discrete_forward(logits)
@@ -101,7 +101,7 @@ class IMLESubsetkLayer(tf.keras.layers.Layer):
             # we now compute the gradients as the difference (I-MLE gradients)
             grad = tf.math.subtract(z_train, map_dy)
             # return the gradient            
-            return grad, k
+            return grad
 
         return z_output, custom_grad
   ```
